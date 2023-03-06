@@ -19,6 +19,17 @@ export const App = () => {
 		}
 	}
 
+	async function fetchItems(){
+		try {
+			const response = await fetch(`${apiURL}/items`);
+			const itemsData = await response.json();
+			
+			console.log(itemsData)
+		} catch (err) {
+			console.log("Oh no an error! ", err)
+		}
+	}
+
 	useEffect(() => {
 		fetchSauces();
 	}, []);
@@ -27,6 +38,7 @@ export const App = () => {
 		<main>	
       <h1>Sauce Store</h1>
 			<h2>All things 🔥</h2>
+			<button onClick={fetchItems}>GET ALL ITEMS</button>
 			<SaucesList sauces={sauces} />
 		</main>
 	)
