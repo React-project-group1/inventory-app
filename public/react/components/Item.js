@@ -1,4 +1,5 @@
 import React from 'react';
+import { ItemDetails } from './ItemDetails';
 import apiURL from '../api';
 
 export const Item = (props) => {
@@ -9,6 +10,7 @@ export const Item = (props) => {
 			const itemData = await response.json();
 			
 			console.log(itemData)
+      props.setItemDetails(itemData)
 		} catch (err) {
 			console.log("Oh no an error! ", err)
 		}
@@ -16,10 +18,8 @@ export const Item = (props) => {
 
   return <>
     <h3>{props.item.title}</h3>
-    <p>{props.item.price}</p>
-    <p>{props.item.category}</p>
-    <p>{props.item.description}</p>
     <img onClick={fetchDetails} src={props.item.image} alt={props.item.title} />
+    {props.itemDetails && <ItemDetails /> }
   </>
 } 
 	

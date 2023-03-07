@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ItemsList } from './ItemsList';
-// import { ItemDetails } from './ItemDetails';
+import { ItemDetails } from './ItemDetails';
 
 // import and prepend the api url to any fetch calls
 import apiURL from '../api';
@@ -8,6 +8,7 @@ import apiURL from '../api';
 export const App = () => {
 
 	const [items, setItems] = useState([]);
+	const [itemDetails, setItemDetails] = useState('');
 
 	async function fetchItems(){
 		try {
@@ -29,7 +30,10 @@ export const App = () => {
 		<main>	
       <h1>Sauce Store</h1>
 			<h2>All things 🔥</h2>
-			<ItemsList items={items} />
+			{!itemDetails ?
+				<ItemsList items={items} setItemDetails={setItemDetails} /> :
+				<ItemDetails item={itemDetails} setItemDetails={setItemDetails} />
+			}
 		</main>
 	)
 }
