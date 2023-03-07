@@ -8,3 +8,4 @@ dist
 
 #sqlite
 *.sqlite
+test.js
