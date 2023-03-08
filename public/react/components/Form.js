@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import ReactDOM from 'react-dom/client';
+import React, { useState } from 'react';
+import apiURL from '../api';
 
-function Form() {
+export function Form() {
   const [inputs, setInputs] = useState({});
 
   const handleChange = (event) => {
@@ -10,10 +10,20 @@ function Form() {
     setInputs(values => ({...values, [name]: value}))
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+
+      const res = await fetch(`${apiURL}/items`, {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(inputs)
+      });
+
     alert(inputs);
   }
+
 
   return (
     <form onSubmit={handleSubmit}>
@@ -43,7 +53,7 @@ function Form() {
       </label>
       <label>
       Pick a category:
-      <select name="selectedCategory">
+      <select name="category" value={inputs.category || ""} onChange={handleChange}>
         <option value="men's clothing">Men's clothing</option>
         <option value="jewelery">Jewelery</option>
         <option value="electronics">Electronics</option>
@@ -62,6 +72,3 @@ function Form() {
     </form>
   )
 }
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Form/>);
