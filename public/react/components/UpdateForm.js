@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import apiURL from '../api';
 
-export function Form() {
+export function UpdateForm(props) {
   const [inputs, setInputs] = useState({});
 
   const handleChange = (event) => {
@@ -12,8 +12,8 @@ export function Form() {
 
   const handleSubmit = async (event) => {
 
-      const res = await fetch(`${apiURL}/items`, {
-        method: "POST",
+      const res = await fetch(`${apiURL}/items/${props.item.id}`, {
+        method: "PUT",
         headers: {
           'Content-Type': 'application/json'
         },
@@ -67,7 +67,7 @@ export function Form() {
         onChange={handleChange}
       />
       </label>
-        <input type="submit" />
+        <button type='submit'>Update</button>
     </form>
   )
 }
