@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  background-color: rgb(223, 223, 223);
+}
+
+/* Item */
+.item-card {
+  border: solid 2px black;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 33.33%;
+  background-color: white;
+}
+.item-image {
+  max-width: 400px;
+  max-height: 400px;
+}
+
+/* ItemList */
+.item-list {
+  display: flex;
+  flex-wrap: wrap;
+}

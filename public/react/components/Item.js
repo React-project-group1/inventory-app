@@ -9,16 +9,17 @@ export const Item = (props) => {
 			const response = await fetch(`${apiURL}/items/${props.item.id}`);
 			const itemData = await response.json();
 			
-			console.log(itemData)
-      props.setItemDetails(itemData)
+      		props.setItemDetails(itemData)
 		} catch (err) {
 			console.log("Oh no an error! ", err)
 		}
 	}
 
   return <>
-    <h3>{props.item.title}</h3>
-    <img onClick={fetchDetails} src={props.item.image} alt={props.item.title} />
+  	<div className='item-card'>
+    	<h3>{props.item.title}</h3>
+    	<img className='item-image' onClick={fetchDetails} src={props.item.image} alt={props.item.title} />
+  	</div>
     {props.itemDetails && <ItemDetails /> }
   </>
 } 

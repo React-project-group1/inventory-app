@@ -14,6 +14,7 @@ export const ItemDetails = ({item, setItemDetails}) => {
     }
 
     async function onDelete() {
+
         try {
             const res = await fetch(`${apiURL}/items/${item.id}`, {
                 method: "DELETE"

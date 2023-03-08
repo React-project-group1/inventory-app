@@ -39,7 +39,7 @@ itemRouter.post("/", async (req, res) => {
 itemRouter.delete("/:id", async (req,res) => {
   try {
     await Item.destroy({ where: { id: req.params.id } })
-    res.status(200).send('Item successfully deleted');
+    res.status(200).json('Item successfully deleted');
   } catch (error) {
     res.status(400).send('Unable to delete Item')
   }
