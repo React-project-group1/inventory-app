@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import apiURL from '../api';
 
-export function Form({ setForm }) {
+export function Form({ form, setForm }) {
   const [inputs, setInputs] = useState({});
 
   const handleChange = (event) => {
@@ -78,8 +78,8 @@ export function Form({ setForm }) {
     </div>
       <br />
       <button className='button' type='submit'>Add</button>
-      <button className='button' onClick={ setForm }>Cancel</button>
     </form>
+      <button className='button' onClick={() => setForm(!form) }>Cancel</button>
         </div>
    </div>
   )

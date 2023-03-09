@@ -42,7 +42,7 @@ export const App = () => {
 			: null}
 			</div>
 
-			{form && <Form setForm={setForm} />}
+			{form && <Form form={form} setForm={setForm} />}
 
 			{!itemDetails ?
 				<ItemsList items={items} setItemDetails={setItemDetails} /> :
