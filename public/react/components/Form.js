@@ -25,7 +25,9 @@ export function Form() {
 
 
   return (
-    <div className='forms'>
+    <div className='add-form'>
+      <div>
+
       <h2>Add Item</h2>
       <form onSubmit={handleSubmit}>
       <div className='form-item'>
@@ -35,7 +37,7 @@ export function Form() {
           name="title" 
           value={inputs.title || ""} 
           onChange={handleChange}
-        />
+          />
       </div>
       <div className='form-item'>
         <label>Enter price:</label>
@@ -44,7 +46,7 @@ export function Form() {
           name="price" 
           value={inputs.price || ""} 
           onChange={handleChange}
-        />
+          />
       </div>
       <div className='form-item'>
         <label>Enter description:</label>
@@ -53,7 +55,7 @@ export function Form() {
           name="description" 
           value={inputs.description || ""} 
           onChange={handleChange}
-        />
+          />
       </div>
       <div className='form-item'>
         <label>Pick a category:</label>
@@ -72,11 +74,12 @@ export function Form() {
         name="image" 
         value={inputs.image || ""} 
         onChange={handleChange}
-      />
+        />
     </div>
       <br />
       <button className='button' type='submit'>Update</button>
     </form>
+        </div>
    </div>
   )
 }

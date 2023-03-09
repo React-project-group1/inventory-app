@@ -92,6 +92,11 @@ h2, h3 {
   padding: 10px 0px;
   font-size: 18px;
 }
+.add-form {
+  background-color: #202070;
+  display: flex;
+  justify-content: end;
+}
 .button {
   font-family: 'Abril Fatface', cursive;;
   border: solid 2px #202070;
