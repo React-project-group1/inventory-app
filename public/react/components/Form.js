@@ -26,7 +26,7 @@ export function Form() {
 
   return (
     <div className='add-form'>
-      <div>
+      <div className= 'boxy'>
 
       <h2>Add Item</h2>
       <form onSubmit={handleSubmit}>

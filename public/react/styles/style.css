@@ -10,6 +10,22 @@ h2, h3 {
   color: #ddcdc6;
 }
 
+.details-item > h3 {
+  text-align: center;
+  text-decoration: underline;
+  color: #202070;
+}
+
+p {
+  color:#202070;
+  text-align: center;
+}
+
+b {
+  color: #202070;
+  text-align: center;
+}
+
 .header {
   text-align: center;
   background-color: #202070;
@@ -95,7 +111,9 @@ h2, h3 {
 .add-form {
   background-color: #202070;
   display: flex;
-  justify-content: end;
+  justify-content: center;
+  text-align: center;
+  
 }
 .button {
   font-family: 'Abril Fatface', cursive;;
@@ -112,4 +130,11 @@ h2, h3 {
 }
 .view-all {
   margin: 5px 0px 30px 60px;
+}
+.boxy {
+  padding: 20px;
+  border: solid 2px white;
+  border-radius: 10px;
+  box-shadow: #DDCDC6;
+
 }

@@ -38,7 +38,9 @@ export const ItemDetails = ({item, setItemDetails}) => {
                 <h3>{item.title}</h3>
                 <br />
                 <p><b>Price:</b> £{item.price}</p>
+                <br></br>
                 <p><b>Category:</b> {item.category}</p>
+                <br></br>
                 <p><b>Description:</b> {item.description}</p>
                 <div className="buttons-wrapper">
                     <button className="button"  onClick={showForm}>Update Item</button>
