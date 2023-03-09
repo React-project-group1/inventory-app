@@ -24,7 +24,7 @@ export const App = () => {
 
 	useEffect(() => {
 		fetchItems();
-	}, []);
+	}, [itemDetails]);
 
 	return (
 		<main>	
