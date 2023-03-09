@@ -1,7 +1,24 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  background-color: rgb(223, 223, 223);
+  background-color: #dfdfdf;
+  color: #252627;
+}
+
+h1, h2, h3 {
+  font-family: 'Abril Fatface', cursive;
+}
+h2, h3 {
+  color: #202070;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.logo {
+  height: 150px;
+  width: 150px;
 }
 
 
@@ -18,7 +35,7 @@
 .item-card {
   height: 100%;
   width: 100%;
-  border: solid 2px black;
+  border: solid 2px #202070;
   border-radius: 10px;
   background-color: white;
   padding: 10px;

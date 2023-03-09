@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ItemsList } from './ItemsList';
 import { ItemDetails } from './ItemDetails';
 import { Form } from './form';
+import logo from "../../assets/PBS.jpg"
 
 // import and prepend the api url to any fetch calls
 import apiURL from '../api';
@@ -27,9 +28,12 @@ export const App = () => {
 	}, [itemDetails]);
 
 	return (
-		<main>	
-      <h1>Sauce Store</h1>
-			<h2>All things 🔥</h2>
+		<main>
+			<div className='header'>
+      			<h1>Sauce Store</h1>
+				<h2>All things 🔥</h2>
+				<img src={logo} className="logo" />
+			</div>
 			{!itemDetails && <Form />}
 			{!itemDetails ?
 				<ItemsList items={items} setItemDetails={setItemDetails} /> :
