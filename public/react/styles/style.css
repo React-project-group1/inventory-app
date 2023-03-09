@@ -63,7 +63,7 @@ h1, h2, h3 {
 .details {
   display: flex;
   justify-content: space-evenly;
-  margin: 0px 30px;
+  margin: 0px 30px 30px 30px;
 }
 .details-image {
   max-width: 600px;
@@ -72,6 +72,12 @@ h1, h2, h3 {
 }
 .details-item {
   width: 33.3%;
+  font-size: 18px;
+}
+.buttons-wrapper {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Update Form */
@@ -79,6 +85,7 @@ h1, h2, h3 {
   display: flex;
   justify-content: space-between;
   padding: 10px 0px;
+  font-size: 18px;
 }
 .button {
   font-family: 'Abril Fatface', cursive;;
@@ -92,4 +99,7 @@ h1, h2, h3 {
 .button:hover {
   background-color: #DDCDC6;
   color: #202070;
+}
+.view-all {
+  margin: 5px 0px 30px 60px;
 }
