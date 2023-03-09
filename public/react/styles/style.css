@@ -29,11 +29,10 @@ b {
 .header {
   text-align: center;
   background-color: #202070;
-  padding-bottom: 10px;
 }
 .logo {
-  height: 500px;
-  width: 500px;
+  height: 420px;
+  width: 420px;
 }
 .forms {
   background-color: #202070;
@@ -128,9 +127,17 @@ b {
   background-color: #DDCDC6;
   color: #202070;
 }
-.view-all {
+.view-all { /* button */
   margin: 5px 0px 30px 60px;
 }
+
+.add-button { /* button */
+  text-align: center;
+  border: solid 2px #DDCDC6;
+  margin-bottom: 20px;
+}
+
+
 .boxy {
   padding: 20px;
   border: solid 2px white;

@@ -11,6 +11,7 @@ export const App = () => {
 
 	const [items, setItems] = useState([]);
 	const [itemDetails, setItemDetails] = useState('');
+	const [form, setForm] = useState(false);
 
 	async function fetchItems(){
 		try {
@@ -27,12 +28,22 @@ export const App = () => {
 		fetchItems();
 	}, [itemDetails]);
 
+	const toggleForm = () => {
+		setForm(!form);
+	}
+
 	return (
 		<main>
 			<div className='header'>
 				<img src={logo} className="logo" />
+				<br />
+			{!form && !itemDetails ? 
+				<button className='button add-button' onClick={toggleForm}>Add Item</button> 
+			: null}
 			</div>
-			{!itemDetails && <Form />}
+
+			{form && <Form setForm={setForm} />}
+
 			{!itemDetails ?
 				<ItemsList items={items} setItemDetails={setItemDetails} /> :
 				<ItemDetails item={itemDetails} setItemDetails={setItemDetails} />
