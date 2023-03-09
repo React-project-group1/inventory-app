@@ -16,9 +16,12 @@ export const Item = (props) => {
 	}
 
   return <>
-  	<div className='item-card'>
+  	<div className='item-wrapper'>
     	<h3>{props.item.title}</h3>
-    	<img className='item-image' onClick={fetchDetails} src={props.item.image} alt={props.item.title} />
+		<br />
+  		<div className='item-card'>
+    		<img className='item-image' onClick={fetchDetails} src={props.item.image} alt={props.item.title} />
+  		</div>
   	</div>
     {props.itemDetails && <ItemDetails /> }
   </>
