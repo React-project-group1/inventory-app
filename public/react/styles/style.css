@@ -1,24 +1,29 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  background-color: #dfdfdf;
-  color: #252627;
+  color: #ddcdc6;
+
 }
 
-h1, h2, h3 {
+h2, h3 {
   font-family: 'Abril Fatface', cursive;
-  color: #202070;
+  color: #ddcdc6;
 }
 
 .header {
   text-align: center;
-  margin-bottom: 20px;
+  background-color: #202070;
+  padding-bottom: 10px;
 }
 .logo {
-  height: 150px;
-  width: 150px;
+  height: 500px;
+  width: 500px;
 }
-
+.forms {
+  background-color: #202070;
+  text-align: left;
+  margin: auto;
+}
 /* Item */
 .item-wrapper {
   text-align: center;
@@ -34,7 +39,7 @@ h1, h2, h3 {
   width: 100%;
   border: solid 2px #202070;
   border-radius: 10px;
-  background-color: white;
+  background-color: #ffffff;
   padding: 10px;
   overflow: hidden;
   transition: 1s ease;
@@ -57,6 +62,7 @@ h1, h2, h3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  background-color: #202070;
 }
 
 /* Item Details */
@@ -79,7 +85,6 @@ h1, h2, h3 {
   display: flex;
   justify-content: space-between;
 }
-
 /* Update Form */
 .form-item {
   display: flex;
