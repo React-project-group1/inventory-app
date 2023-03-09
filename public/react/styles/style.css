@@ -1,26 +1,32 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  background-color: #dfdfdf;
-  color: #252627;
+  color: #ddcdc6;
+
 }
 
 h1, h2, h3 {
   font-family: 'Abril Fatface', cursive;
 }
 h2, h3 {
-  color: #202070;
+  color: #ddcdc6;
 }
 
 .header {
   text-align: center;
-  margin-bottom: 20px;
+  background-color: #202070;
+  padding-bottom: 10px;
 }
 .logo {
-  height: 150px;
-  width: 150px;
+  height: 500px;
+  width: 500px;
 }
+.forms {
+  background-color: #202070;
+  text-align: left;
+  margin: auto;
 
+}
 
 /* Item */
 .item-wrapper {
@@ -37,7 +43,7 @@ h2, h3 {
   width: 100%;
   border: solid 2px #202070;
   border-radius: 10px;
-  background-color: white;
+  background-color: #ffffff;
   padding: 10px;
   overflow: hidden;
   transition: 1s ease;
@@ -60,4 +66,48 @@ h2, h3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  background-color: #202070;
+}
+/* Item Details */
+.details {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0px 30px 30px 30px;
+}
+.details-image {
+  max-width: 600px;
+  max-height: 600px;
+  width: auto;
+}
+.details-item {
+  width: 33.3%;
+  font-size: 18px;
+}
+.buttons-wrapper {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+/* Update Form */
+.form-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
+  font-size: 18px;
+}
+.button {
+  font-family: 'Abril Fatface', cursive;;
+  border: solid 2px #202070;
+  background-color: #202070;
+  padding: 10px 40px;
+  color: #DDCDC6;
+  font-size: 18px;
+  transition: 1s ease;
+}
+.button:hover {
+  background-color: #DDCDC6;
+  color: #202070;
+}
+.view-all {
+  margin: 5px 0px 30px 60px;
 }

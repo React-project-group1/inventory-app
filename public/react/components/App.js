@@ -30,8 +30,6 @@ export const App = () => {
 	return (
 		<main>
 			<div className='header'>
-      			<h1>Sauce Store</h1>
-				<h2>All things 🔥</h2>
 				<img src={logo} className="logo" />
 			</div>
 			{!itemDetails && <Form />}
