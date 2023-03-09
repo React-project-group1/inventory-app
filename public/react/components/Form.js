@@ -25,6 +25,8 @@ export function Form() {
 
 
   return (
+    <div>
+      <h2>Add Item</h2>
     <form onSubmit={handleSubmit}>
       <label>Enter title:
       <input 
@@ -34,6 +36,7 @@ export function Form() {
         onChange={handleChange}
       />
       </label>
+      <br></br>
       <label>Enter price:
         <input 
           type="number" 
@@ -42,6 +45,7 @@ export function Form() {
           onChange={handleChange}
         />
         </label>
+        <br></br>
         <label>Enter description:
       <input 
         type="text" 
@@ -50,6 +54,7 @@ export function Form() {
         onChange={handleChange}
       />
       </label>
+      <br></br>
       <label>
       Pick a category:
       <select name="category" value={inputs.category || ""} onChange={handleChange}>
@@ -59,6 +64,7 @@ export function Form() {
         <option value="women's clothing">Women's clothing</option>
       </select>
     </label>
+    <br></br>
       <label>Enter image url:
       <input 
         type="text" 
@@ -67,7 +73,9 @@ export function Form() {
         onChange={handleChange}
       />
       </label>
+      <br></br>
         <input type="submit" />
     </form>
+    </div>
   )
 }
