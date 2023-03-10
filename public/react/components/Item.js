@@ -10,6 +10,7 @@ export const Item = (props) => {
 			const itemData = await response.json();
 			
       		props.setItemDetails(itemData)
+			props.setForm(false);
 		} catch (err) {
 			console.log("Oh no an error! ", err)
 		}
@@ -20,7 +21,10 @@ export const Item = (props) => {
     	<h3>{props.item.title}</h3>
 		<br />
   		<div className='item-card'>
-    		<img className='item-image' onClick={fetchDetails} src={props.item.image} alt={props.item.title} />
+    		<img className='item-image' 
+				onClick={fetchDetails}
+				src={props.item.image} 
+				alt={props.item.title} />
   		</div>
   	</div>
     {props.itemDetails && <ItemDetails /> }

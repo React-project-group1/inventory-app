@@ -45,7 +45,7 @@ export const App = () => {
 			{form && <Form form={form} setForm={setForm} />}
 
 			{!itemDetails ?
-				<ItemsList items={items} setItemDetails={setItemDetails} /> :
+				<ItemsList items={items} setItemDetails={setItemDetails} form={form} setForm={setForm} /> :
 				<ItemDetails item={itemDetails} setItemDetails={setItemDetails} />
 			}
 		</main>
