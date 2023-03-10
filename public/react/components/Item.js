@@ -9,8 +9,8 @@ export const Item = (props) => {
 			const response = await fetch(`${apiURL}/items/${props.item.id}`);
 			const itemData = await response.json();
 			
-      		props.setItemDetails(itemData)
 			props.setForm(false);
+      		props.setItemDetails(itemData)
 		} catch (err) {
 			console.log("Oh no an error! ", err)
 		}

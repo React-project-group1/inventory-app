@@ -63,9 +63,8 @@ itemRouter.delete("/:id", async (req,res) => {
 
 // EDIT an item
 itemRouter.put("/:id", 
-  [check("title").isString().trim().isLength({ min: 3 })],
-  [check("price").isNumeric()],
-  [check("description").not().isEmpty().trim().isLength({ min: 20 })],
+  // [check("title").isString().trim().isLength({ min: 3 })],
+  // [check("price").isNumeric()],
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -73,13 +72,7 @@ itemRouter.put("/:id",
     } else {
 
       try {
-        const updateItem = await Item.update({
-          title: req.body.title,
-          price: req.body.price,
-          description: req.body.description,
-          category: req.body.category,
-          image: req.body.image
-        }, {
+        const updateItem = await Item.update(req.body, {
           where: {
             id: req.params.id
           }
