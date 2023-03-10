@@ -1,6 +1,7 @@
 const express = require("express");
 const itemRouter = express.Router();
 const { Item } = require("../models");
+const { check, validationResult } = require('express-validator');
 
 // GET all items
 itemRouter.get("/", async (req, res, next) => {
@@ -25,13 +26,27 @@ itemRouter.get("/:id", async (req, res) => {
 
 
 // ADD a new item
-itemRouter.post("/", async (req, res) => {
-  try {
-    const newItem = await Item.create(req.body);
-    res.status(201).send({ msg: 'New Item successfully added', newItem })
-  } catch (error) {
-    res.status(400).send('Unable to post new user')
-  }
+itemRouter.post("/", 
+  [check("title").not().isEmpty().trim()], 
+  [check("price").isNumeric()],
+  [check("description").not().isEmpty().trim().isLength({ min: 20 })],
+  [check("category").not().isEmpty().trim()],
+  [check("image").not().isEmpty().trim()],
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      res.json({ error: errors.array() });
+    } else {
+      
+      try {
+        const newItem = await Item.create(req.body);
+        res.status(201).send({ msg: 'New Item successfully added', newItem })
+        alert('Item successfully added')
+      } catch (error) {
+        res.status(400).send('Unable to post new user')
+      }
+    }
+
 })
 
 
@@ -47,23 +62,34 @@ itemRouter.delete("/:id", async (req,res) => {
 
 
 // EDIT an item
-itemRouter.put("/:id", async (req, res) => {
-  try {
-    const updateItem = await Item.update({
-      title: req.body.title,
-      price: req.body.price,
-      description: req.body.description,
-      category: req.body.category,
-      image: req.body.image
-    }, {
-      where: {
-        id: req.params.id
+itemRouter.put("/:id", 
+  [check("title").isString().trim().isLength({ min: 3 })],
+  [check("price").isNumeric()],
+  [check("description").not().isEmpty().trim().isLength({ min: 20 })],
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      res.json({ error: errors.array() });
+    } else {
+
+      try {
+        const updateItem = await Item.update({
+          title: req.body.title,
+          price: req.body.price,
+          description: req.body.description,
+          category: req.body.category,
+          image: req.body.image
+        }, {
+          where: {
+            id: req.params.id
+          }
+        });
+        res.status(200).send({ msg: 'Item successfully updated', updateItem })
+      } catch (error) {
+        res.status(400).send('Unable to edit Item information');
       }
-    });
-    res.status(200).send({ msg: 'Item successfully updated', updateItem })
-  } catch (error) {
-    res.status(400).send('Unable to edit Item information');
-  }
+
+    }
 })
 
 
